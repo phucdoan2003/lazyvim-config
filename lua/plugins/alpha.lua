@@ -19,7 +19,7 @@ return {
     dashboard.section.buttons.val = {
       dashboard.button("U", " " .. " University Workspace",       "<cmd> U <cr>"),
       dashboard.button("P", " " .. " Projects Workspace",        "<cmd> P <cr>"),
-      dashboard.button("S", " " .. " Company Workspace",    "<cmd> S <cr>"),
+      dashboard.button("E", " " .. " EDGE Workspace",    "<cmd> S <cr>"),
       dashboard.button("C", " " .. " Neovim Config",          "<cmd> C <cr>"),
       dashboard.button("s", " " .. " Restore Session", [[<cmd> lua require("persistence").load() <cr>]]),
       dashboard.button("x", " " .. " Lazy Extras",     "<cmd> LazyExtras <cr>"),

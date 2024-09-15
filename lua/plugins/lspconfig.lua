@@ -10,12 +10,11 @@ return {
   {
     "folke/noice.nvim",
     opts = {
-      messages = {
-        enabled = false,
-      },
-      lsp = {
-        progress = {
-          enabled = false,
+      views = {
+        mini = {
+          win_options = {
+            winblend = 0,
+          },
         },
       },
     },

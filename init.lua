@@ -9,10 +9,3 @@ vim.cmd("highlight LineNr guifg=#BD93F9 guibg=NONE")
 vim.cmd("highlight WinSeparator guifg=#6E6C7E guibg=NONE")
 vim.cmd("highlight NeoTreeWinSeparator guifg=#6E6C7E guibg=NONE")
 vim.cmd("highlight BufferLineSeparator guifg=#6E6C7E guibg=NONE")
-
-lspconfig.graphql.setup({
-  cmd = { "graphql-lsp", "server", "-m", "stream" },
-  filetypes = { "graphql", "typescriptreact", "javascriptreact" },
-  root_dir = lspconfig.util.root_pattern(".git", ".graphqlrc*", ".graphql.config.*", "graphql.config.*"),
-  capabilities = capabilities,
-})

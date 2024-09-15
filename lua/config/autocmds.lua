@@ -7,6 +7,7 @@ vim.api.nvim_create_autocmd({ "BufEnter", "WinEnter" }, {
   group = number_toggle_group,
   pattern = "*",
   callback = function()
+    vim.opt_local.number = true
     vim.opt_local.relativenumber = true
   end,
 })
@@ -15,6 +16,7 @@ vim.api.nvim_create_autocmd({ "BufLeave", "WinLeave" }, {
   group = number_toggle_group,
   pattern = "*",
   callback = function()
+    vim.opt_local.number = false
     vim.opt_local.relativenumber = false
   end,
 })
@@ -37,21 +39,4 @@ vim.api.nvim_create_autocmd("CursorHold", {
     }
     vim.diagnostic.open_float(nil, opts)
   end,
-})
-
-vim.api.nvim_create_augroup("TerminalSettings", { clear = true })
-vim.api.nvim_create_autocmd("TermOpen", {
-  group = "TerminalSettings",
-  pattern = "*",
-  callback = function()
-    vim.cmd("setlocal nonumber norelativenumber")
-    vim.cmd("startinsert")
-    vim.cmd("resize " .. math.floor(vim.o.lines / 4))
-  end,
-})
-
-vim.api.nvim_create_autocmd("BufEnter", {
-  group = "TerminalSettings",
-  pattern = "term://*",
-  command = "setlocal nonumber norelativenumber | startinsert",
 })
